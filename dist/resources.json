@@ -1,0 +1,63 @@
+{
+    "resources": [
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "controller/Quantity.controller.js"
+        },
+        {
+            "name": "controller/SerialNumbers.controller.js"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "i18n/i18n_en.properties",
+            "raw": "i18n/i18n.properties",
+            "locale": "_en"
+        },
+        {
+            "name": "i18n/i18n_pt.properties",
+            "raw": "i18n/i18n.properties",
+            "locale": "_pt"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "view/ErrorReason.fragment.xml"
+        },
+        {
+            "name": "view/Quantity.view.xml"
+        },
+        {
+            "name": "view/SerialNumbers.view.xml"
+        },
+        {
+            "name": "view/Simcard.fragment.xml"
+        },
+        {
+            "name": "view/SimcardAproved.fragment.xml"
+        },
+        {
+            "name": "view/SimcardReject.fragment.xml"
+        }
+    ]
+}

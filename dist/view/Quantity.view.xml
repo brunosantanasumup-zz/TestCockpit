@@ -1,0 +1,41 @@
+<mvc:View controllerName="zui5_mm_ct.controller.Quantity" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:mc="sap.suite.ui.microchart" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<App id="app">
+		<pages>
+			<Page title="{i18n>title}" id="pageQuantity" floatingFooter="true"
+				class="sapUiContentPadding sapUiResponsivePadding--header sapThemeFontSize sapUiResponsivePadding--content sapUiResponsivePadding--floatingFooter">
+				<content>
+					<VBox class="sapUiSmallMargin">
+						<f:Form id="FormChange354" editable="true">
+							<f:title>
+								<core:Title text="{i18n>quantityToTested}"/>
+							</f:title>
+							<f:layout>
+								<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4"
+									emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement label="{i18n>quantity}">
+											<f:fields>
+												<Input value="{Quant>/Quantity}" required="true" id="quant" type="Number" submit="onSearch" enabled="true"/>
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</VBox>
+				</content>
+				<footer>
+					<OverflowToolbar id="otbFooter">
+						<ToolbarSpacer/>
+						<Button type="Emphasized" press="onSearch" text="{i18n>execute}"></Button>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

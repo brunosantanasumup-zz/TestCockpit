@@ -1,0 +1,99 @@
+{
+  "mockpreview": {
+    "mockUri": "",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "deploy": {
+    "destination": "SHD200",
+    "name": "ZUI5_MM_CT"
+  },
+  "projectType": [
+    "com.watt.common.builder.sapui5clientbuild",
+    "sap.watt.uitools.ide.fiori"
+  ],
+  "build": {
+    "buildRequired": false,
+    "sourceFolder": "webapp",
+    "targetFolder": "dist",
+    "excludeFolders": [],
+    "excludeFiles": [
+      "index.html"
+    ],
+    "lastBuildDateTime": "Wed, 02 Sep 2020 13:25:21 GMT",
+    "availableFoldersComboBox": [
+      {
+        "text": "i18n"
+      },
+      {
+        "text": "model"
+      },
+      {
+        "text": "css"
+      },
+      {
+        "text": "controller"
+      },
+      {
+        "text": "localService"
+      },
+      {
+        "text": "view"
+      }
+    ],
+    "availableFilesComboBox": [
+      {
+        "text": "i18n/i18n_pt.properties"
+      },
+      {
+        "text": "i18n/i18n_en.properties"
+      },
+      {
+        "text": "manifest.json"
+      },
+      {
+        "text": "model/formatter.js"
+      },
+      {
+        "text": "model/models.js"
+      },
+      {
+        "text": "css/style.css"
+      },
+      {
+        "text": "controller/Quantity.controller.js"
+      },
+      {
+        "text": "controller/SerialNumbers.controller.js"
+      },
+      {
+        "text": "Component.js"
+      },
+      {
+        "text": "localService/metadata.xml"
+      },
+      {
+        "text": "index.html"
+      },
+      {
+        "text": "view/Simcard.fragment.xml"
+      },
+      {
+        "text": "view/ErrorReason.fragment.xml"
+      },
+      {
+        "text": "view/SimcardAproved.fragment.xml"
+      },
+      {
+        "text": "view/SerialNumbers.view.xml"
+      },
+      {
+        "text": "view/Quantity.view.xml"
+      }
+    ],
+    "excludedFolders": [],
+    "excludedFiles": []
+  }
+}

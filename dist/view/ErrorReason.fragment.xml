@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	controllerName="zui5_mm_ct.controller.SerialNumbers">
+	<Dialog title="{i18n>error_reason}">
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+			adjustLabelSpan="true" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+			singleContainerFullSize="false">
+			<Label text="{i18n>error_reason}" labelFor="errorReason"/>
+			<!--		<ComboBox id="comboError" showSecondaryValues="true" items="{ErrorReason>/}" selectionChange='errorSelected'>
+				<core:ListItem key="{ErrorReason>CtProblemReason}" text="{ErrorReason>CtProblemDescription}"/>
+			</ComboBox>-->
+			<Input id="errorReason" textFormatMode="Key" showSuggestion="true" suggestionItems="{ErrorReason>/}"
+				suggestionItemSelected=".onSuggestionItemSelected" submit="errorReasonSelect">
+				<suggestionItems>
+					<core:ListItem key="{ErrorReason>CtProblemReason}" text="{ErrorReason>CtProblemDescription}" additionalText="{ErrorReason>CtProblemReason}"/>
+				</suggestionItems>
+			</Input>
+			<Text id="errorReasonDescription"/>
+			<Label text="{i18n>bag}"/>
+			<Input id="box" value="{Posting>/Bag}" submit="onPressErrorReason" maxLength="20"/>
+			<Button type="Emphasized" text="{i18n>enviar}" press="onPressErrorReason" width="50%"/>
+		</f:SimpleForm>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,18 @@
+/* Enter your custom styles here */
+
+.sapMTitleStyleAuto {
+    font-size: 20px;
+}
+
+.sapMTitle {
+    font-weight: bold;
+}
+
+.sapUiBlockLayoutBackgroundDashboard .sapUiBlockCellContent{
+	margin: 0.1rem;
+}
+
+.sapUiBlockLayoutSizeL .sapUiBlockCellContent {
+    padding: 0rem;
+    font-size: 1.125rem;
+}

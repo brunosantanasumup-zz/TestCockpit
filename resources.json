@@ -1,0 +1,67 @@
+{
+    "resources": [
+        {
+            "name": "i18n/i18n_pt.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "view/SerialNumbers.view.xml"
+        },
+        {
+            "name": "view/Simcard.fragment.xml"
+        },
+        {
+            "name": "view/SimcardAproved.fragment.xml"
+        },
+        {
+            "name": "view/Quantity.view.xml"
+        },
+        {
+            "name": "view/ErrorReason.fragment.xml"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": ".project.json"
+        },
+        {
+            "name": "resources.json",
+            "merged": true
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "controller/Quantity.controller.js"
+        },
+        {
+            "name": "controller/SerialNumbers.controller.js"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": ".user.project.json"
+        },
+        {
+            "name": "Component.js"
+        }
+    ]
+}

@@ -1,0 +1,156 @@
+<mvc:View xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:t="sap.ui.table"
+	xmlns:l="sap.ui.layout" controllerName="zui5_mm_ct.controller.SerialNumbers" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:chart="sap.suite.ui.microchart" xmlns:viz="sap.viz.ui5.controls">
+	<App id="app">
+		<pages>
+			<Page title="{i18n>title}" id="pageSN" showNavButton="false" floatingFooter="true"
+				class="sapUiContentPadding sapUiResponsivePadding--header sapThemeFontSize sapUiResponsivePadding--content sapUiResponsivePadding--floatingFooter">
+				<content>
+					<l:VerticalLayout id="containerLayout" width="100%">
+						<l:BlockLayout id="BlockLayout" background="Dashboard">
+							<l:BlockLayoutRow >
+								<l:BlockLayoutCell width="1">
+									<VBox class="sapUiSmallMargin">
+										<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+											adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1"
+											singleContainerFullSize="true">
+											<f:content>
+												<!--<Label text="{i18n>criado_por} : {Quantity>/User}" class="sapUiSmallMargin"/>-->
+												<Text text="{i18n>criado_por}: {Quantity>/User}"/>
+												<!--<Label text="{i18n>data}"/>-->
+												<Text text="{i18n>data}: { path: 'Quantity>/Data', formatter: '.formatDate'}"/>
+											</f:content>
+										</f:SimpleForm>
+									</VBox>
+								</l:BlockLayoutCell>
+								<l:BlockLayoutCell >
+									<f:SimpleForm title="{i18n>progress}" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+										adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+										singleContainerFullSize="false">
+										<!--<Label text="{i18n>informedquantity}"/>-->
+										<Text text="{i18n>informedquantity}: {Quantity>/QuantityInformed}"/>
+										<!--<Label text="{i18n>testedquantity}"/>-->
+										<Text text="{i18n>testedquantity}: {Quantity>/QuantityAlreadyTested}"/>
+										<ProgressIndicator percentValue="{Quantity>/Percentage}" displayValue="{Quantity>/Percentage}%" showValue="true" state="Success"/>
+										<!--<Label text="{i18n>missingquantity}"/>-->
+										<Text text="{i18n>missingquantity}: {Quantity>/QuantityToBeTested}"/>
+									</f:SimpleForm>
+								</l:BlockLayoutCell>
+								<l:BlockLayoutCell>
+									<FlexBox justifyContent="Center" alignItems="Start">
+										<items>
+											<viz:VizFrame id="idpiechart" vizType="pie" height='150px' width="400px"/>
+										</items>
+									</FlexBox>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
+						</l:BlockLayout>
+					</l:VerticalLayout>
+					<IconTabBar class="sapUiResponsiveContentPadding" expandable="false" select="onPressTestadoTab">
+						<items>
+							<IconTabFilter icon="sap-icon://accept" iconColor="Positive" count="{Quantity>/QuantityAproved}" text="{i18n>aprovado}" key="{i18n>testado}"
+								design="Horizontal">
+								<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+									adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+									singleContainerFullSize="false">
+									<!--<ProgressIndicator percentValue="{Quantity>/Percentage}" displayValue="{Quantity>/Percentage}%" showValue="true" state="Success"/>-->
+									<Label text="{i18n>sntestado}"/>
+									<Input value="{Posting>/SerialNumberReader}" submit="onPressSubmitTestado" maxLength="18" id="idTestado"/>
+									<Button type="Emphasized" text="{i18n>scanear}" press="onPressSubmitTestado" width="80%"/>
+								</f:SimpleForm>
+							</IconTabFilter>
+							<IconTabSeparator icon="sap-icon://vertical-grip"/>
+							<IconTabFilter icon="sap-icon://add-product" iconColor="Critical" count="{Quantity>/QuantityAmostra}" text="{i18n>amostragem}"
+								key="{i18n>amostragem}" design="Horizontal">
+								<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+									adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+									singleContainerFullSize="false">
+									<Label text="{i18n>snamostra}"/>
+									<Input value="{Posting>/SerialNumberReaderAmostra}" submit="onPressSubmitAmostra" maxLength="18" id="idAmostra"/>
+									<Button type="Emphasized" text="{i18n>scanear}" press="onPressSubmitAmostra" width="80%"/>
+								</f:SimpleForm>
+							</IconTabFilter>
+							<IconTabSeparator icon="sap-icon://vertical-grip"/>
+							<IconTabFilter icon="sap-icon://decline" iconColor="Negative" count="{Quantity>/QuantityReject}" text="{i18n>reprovado}"
+								key="{i18n>reprovado}" design="Horizontal">
+								<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+									adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+									singleContainerFullSize="false">
+									<Label text="{i18n>snreprovado}"/>
+									<Input value="{Posting>/SerialNumberReaderReject}" submit="onPressSubmitReject" maxLength="18" id="idReject"/>
+									<Button type="Emphasized" text="{i18n>scanear}" press="onPressSubmitReject" width="80%"/>
+								</f:SimpleForm>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+					<t:Table id="SerialNumbersBiped" rows="{SNBiped>/SN}" selectionMode="Single" ariaLabelledBy="title">
+						<t:extension>
+							<OverflowToolbar>
+								<Title text="{i18n>snscaned}" id="title"/>
+								<ToolbarSpacer/>
+								<Button icon="sap-icon://delete" tooltip="Eliminar" press="onPressDelete"/>
+							</OverflowToolbar>
+						</t:extension>
+						<t:columns>
+							<t:Column width="auto" filterProperty="Sernr" sortProperty="Sernr">
+								<Label text="{i18n>sn}"/>
+								<t:template>
+									<Text text="{SNBiped>Sernr}" wrapping="false"/>
+								</t:template>
+							</t:Column>
+							<t:Column width="auto" filterProperty="Material" sortProperty="Material">
+								<Label text="{i18n>leitor}"/>
+								<t:template>
+									<Text text="{SNBiped>Material}" wrapping="false"/>
+								</t:template>
+							</t:Column>
+							<t:Column width="auto" filterProperty="Sernrsimcard" sortProperty="Sernrsimcard">
+								<Label text="{i18n>snsimcard}"/>
+								<t:template>
+									<Text text="{SNBiped>Sernrsimcard}" wrapping="false"/>
+								</t:template>
+							</t:Column>
+							<t:Column width="auto" filterProperty="Operadora" sortProperty="Operadora">
+								<Label text="{i18n>operadora}"/>
+								<t:template>
+									<Text text="{SNBiped>Operadora}" wrapping="false"/>
+								</t:template>
+							</t:Column>
+							<t:Column width="auto" filterProperty="Materialsimcard" sortProperty="Materialsimcard">
+								<Label text="{i18n>simcard}"/>
+								<t:template>
+									<Text text="{SNBiped>Materialsimcard}" wrapping="false"/>
+								</t:template>
+							</t:Column>
+							<t:Column width="auto" filterProperty="Testresult" sortProperty="Testresult">
+								<Label text="{i18n>teste}"/>
+								<t:template>
+									<ObjectStatus text="{ path: 'SNBiped>Testresult', formatter: '.testResult' } "
+										state="{ path: 'SNBiped>Testresult', formatter: '.formatAvailableToObjectState' }"/>
+								</t:template>
+							</t:Column>
+							<t:Column width="auto" filterProperty=" Problemadescr" sortProperty="Problemadescr">
+								<Label text="{i18n>problema}"/>
+								<t:template>
+									<Text text="{SNBiped>Problemadescr}" wrapping="false"/>
+								</t:template>
+							</t:Column>
+							<t:Column width="auto" filterProperty="Caixa" sortProperty="Caixa">
+								<Label text="{i18n>bag}"/>
+								<t:template>
+									<Text text="{SNBiped>Caixa}" wrapping="false"/>
+								</t:template>
+							</t:Column>
+						</t:columns>
+					</t:Table>
+				</content>
+				<footer>
+					<OverflowToolbar >
+						<ToolbarSpacer/>
+						<Button type="Emphasized" press="onPressMoviment" text="{i18n>movimentar}"></Button>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
