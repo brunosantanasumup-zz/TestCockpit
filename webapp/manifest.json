@@ -55,12 +55,12 @@
 		"dependencies": {
 			"minUI5Version": "1.30.0",
 			"libs": {
-				"sap.ui.core": {},
+				"sap.collaboration": {},
 				"sap.m": {},
+				"sap.ui.comp": {},
+				"sap.ui.core": {},
 				"sap.ui.layout": {},
 				"sap.ushell": {},
-				"sap.collaboration": {},
-				"sap.ui.comp": {},
 				"sap.uxap": {}
 			}
 		},

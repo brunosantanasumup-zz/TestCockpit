@@ -1,6 +1,6 @@
 <mvc:View xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:t="sap.ui.table"
 	xmlns:l="sap.ui.layout" controllerName="zui5_mm_ct.controller.SerialNumbers" xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:chart="sap.suite.ui.microchart" xmlns:viz="sap.viz.ui5.controls">
+	 xmlns:viz="sap.viz.ui5.controls">
 	<App id="app">
 		<pages>
 			<Page title="{i18n>title}" id="pageSN" showNavButton="false" floatingFooter="true"

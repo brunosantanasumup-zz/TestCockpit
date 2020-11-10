@@ -36,6 +36,7 @@ sap.ui.define([
 		},
 		onSuggestionItemSelected: function(oEvent) {
 			var oItem = oEvent.getParameter("selectedItem");
+			if (oItem)
 			sap.ui.getCore().byId("errorReasonDescription").setText(oItem.getKey());
 		},
 
